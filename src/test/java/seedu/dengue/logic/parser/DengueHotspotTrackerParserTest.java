@@ -19,6 +19,7 @@ import seedu.dengue.logic.commands.DeleteCommand;
 import seedu.dengue.logic.commands.EditCommand;
 import seedu.dengue.logic.commands.EditCommand.EditPersonDescriptor;
 import seedu.dengue.logic.commands.ExitCommand;
+import seedu.dengue.logic.commands.FilterCommand;
 import seedu.dengue.logic.commands.FindCommand;
 import seedu.dengue.logic.commands.HelpCommand;
 import seedu.dengue.logic.commands.ListCommand;
@@ -66,6 +67,11 @@ public class DengueHotspotTrackerParserTest {
     public void parseCommand_exit() throws Exception {
         assertTrue(parser.parseCommand(ExitCommand.COMMAND_WORD) instanceof ExitCommand);
         assertTrue(parser.parseCommand(ExitCommand.COMMAND_WORD + " 3") instanceof ExitCommand);
+    }
+
+    @Test
+    public void parseCommand_filter() throws Exception {
+        assertTrue(parser.parseCommand(FilterCommand.COMMAND_WORD) instanceof FilterCommand);
     }
 
     @Test
